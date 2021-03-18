@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1610622736 source:d:\software\codeblocks\workspace\a - brainman - 2\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+	<cstring>
+	<cstdio>
+

@@ -1,0 +1,16 @@
+{
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "valarray": "cpp",
+    "random": "cpp"
+  },
+  "C_Cpp.clang_format_style": "{ BasedOnStyle: Chromium, IndentWidth: 4}",
+}

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1610001426 source:d:\software\codeblocks\workspace\a+b for input-output practice (vi)\main.cpp
+	<iostream>
+	<cstdio>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1610106764 source:d:\software\codeblocks\workspace\多项式求和\main.cpp
+	<iostream>
+	<cstdio>
+	<cmath>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1613877193 source:d:\software\codeblocks\workspace\Ì°ÐÄ\radar installation\main.cpp
+	<cstdio>
+	<cmath>
+	<algorithm>
+

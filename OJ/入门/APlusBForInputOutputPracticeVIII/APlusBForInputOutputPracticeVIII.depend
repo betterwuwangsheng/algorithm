@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1609998896 source:d:\software\codeblocks\workspace\aplusbforinputoutputpracticeviii\main.cpp
+	<iostream>
+	<cstdio>
+

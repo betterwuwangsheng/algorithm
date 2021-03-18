@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int dp[1000][1000];
+int main() {
+    string a, b;
+    while(cin >> a >> b) {
+        int lena = a.length();
+        int lenb = b.length();
+
+        for(int i = 1; i <= lena; ++i) {
+            for(int j = 1; j <= lenb; ++j) {
+                if(a[i - 1] == b[j - 1])
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                else
+                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+        printf("%d\n", dp[lena][lenb]);
+    }
+    return 0;
+}

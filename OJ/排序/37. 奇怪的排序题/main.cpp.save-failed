@@ -1,0 +1,86 @@
+#include <stdlib.h>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+typedef long long LL;
+
+int n;
+const int MAXN = 5e5 + 10;
+const LL L = 1e8;
+LL num[MAXN];
+
+//计算 1 的数量
+int CountOfOne(LL x) {
+    int cnt = 0;
+
+    //n-1：一个二进制的数减1，就是将这个二进制最右边的那个1变成0，然后它后边的所有位置都变成1~
+    //举例：0011 0100，减1(n-1)后变成：0011 0011。
+    //n &= (n-1)，并操作就会将有0的位置都变成0，
+    //上面的例子的结果就是0011 0000，然后再赋值给n，
+    //这时n就去掉了一个1，或者叫做计数了一个1
+    while (x) {
+        ++cnt;
+        x &= (x - 1);
+    }
+    return cnt;
+}
+bool cmp(LL x, LL y) {
+
+    int a = CountOfOne(x);
+    int b = CountOfOne(y);
+
+    //1 的位数不同 -> 从大到小进行排序
+    if( a != b)
+        return a > b;
+
+    //若两个数的二进制表示中 1 的位数相同，则按照数本身值由小到大排序
+    return x < y;
+}
+
+/**
+    getchar 是用来读入 1 byte 的数据并将其转换为 char 类型的函数
+    且速度很快，故可以用“读入字符——转换为整型”来代替缓慢的读入
+
+    每个整数由两部分组成——符号和数字
+    整数的 '+' 通常是省略的，且不会对后面数字所代表的值产生影响，
+    而 '-' 不可省略，
+    因此要进行判定10 进制整数中是不含空格或除 0~9 和正负号外的其他字符的
+    因此在读入不应存在于整数中的字符（通常为空格）时，就可以判定已经读入结束
+*/
+
+//快读
+LL read() {
+    LL f = 1, c = 0;
+    char ch = getchar();
+    while(!isdigit(ch)) {
+        if(ch == '-')
+            f = -1;
+        ch = getchar();
+    }
+    while(isdigit(ch)) {
+        c = c * 10 + ch - '0';
+        ch = getchar();
+    }
+    return c*f;
+}
+int main() {
+
+    //取消同步的操作
+    std::ios::sync_with_stdio(false);
+    n = read();
+
+    for(int i = 0; i < n; ++i) {
+        num[i] = read();
+    }
+
+    //排序
+    //make_heap(num,num + n, cmp);
+    //sort_heap(num, num + n, cmp);
+
+    for(int i = 0; i < n; ++i) {
+        printf("%lld ", num[i]);
+    }
+    return 0;
+}
