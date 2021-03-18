@@ -1,6 +1,6 @@
 # algorithm
 EOJ
 HDU
-���
+洛谷
 codeforces
-���㷨ˢ��
+等算法刷题
