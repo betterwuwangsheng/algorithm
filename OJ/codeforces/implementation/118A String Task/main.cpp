@@ -5,18 +5,19 @@ using namespace std;
 int main() {
     string s;
     cin >> s;
-    for(int i = 0;  i < s.size(); ++i) {
-
-        //è½¬æ¢ä¸ºå°å†™
+    for (int i = 0; i < s.size(); ++i) {
+        //×ª»»ÎªÐ¡Ð´
         s[i] = tolower(s[i]);
 
-        //å…ƒéŸ³
-        if (tolower(s[i]) == 'a' || tolower(s[i]) == 'e' || tolower(s[i]) == 'i' || tolower(s[i]) == 'o' || tolower(s[i]) == 'u' || tolower(s[i]) == 'y')
+        //ÊÇÔªÒô
+        if (tolower(s[i]) == 'a' || tolower(s[i]) == 'e' ||
+            tolower(s[i]) == 'i' || tolower(s[i]) == 'o' ||
+            tolower(s[i]) == 'u' || tolower(s[i]) == 'y')
 
-            //åˆ é™¤
+            //É¾³ý
             s.erase(s.begin() + i--);
         else
-            //è¾…éŸ³æ’å…¥ .
+            //²åÈë
             s.insert(s.begin() + i++, '.');
     }
     cout << s << endl;
