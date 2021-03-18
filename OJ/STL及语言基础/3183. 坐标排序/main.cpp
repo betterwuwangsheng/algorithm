@@ -4,58 +4,59 @@ using namespace std;
 
 #define N 100
 typedef struct {
-    int x,y;
+    int x, y;
 } Point;
 
 int check(Point p) {
-    if(p.x >= 0 && p.y >= 0)
+    if (p.x >= 0 && p.y >= 0)
         return 1;
-    else if(p.x < 0 && p.y >= 0)
+    else if (p.x < 0 && p.y >= 0)
         return 2;
-    else if(p.x <= 0 && p.y < 0)
+    else if (p.x <= 0 && p.y < 0)
         return 3;
     else
         return 4;
 }
 
 bool cmp(Point a, Point b) {
-    //åˆ°åæ ‡åŸç‚¹çš„è·ç¦»
+    //µ½×ø±êÔ­µãµÄ¾àÀë
     double disa = sqrt(a.x * a.x + a.y * a.y);
     double disb = sqrt(b.x * b.x + b.y * b.y);
 
-    //å¦‚æœè·ç¦»ç›¸åŒåˆåœ¨åŒä¸€è±¡é™å†…ï¼Œåˆ™æŒ‰åæ ‡å€¼ x çš„ç»å¯¹å€¼ä»å°åˆ°å¤§æ’åº
-    if(disa == disb && check(a) == check(b))
+    //Èç¹û¾àÀëÏàÍ¬ÓÖÔÚÍ¬Ò»ÏóÏŞÄÚ£¬Ôò°´×ø±êÖµ x µÄ¾ø¶ÔÖµ´ÓĞ¡µ½´óÅÅĞò
+    if (disa == disb && check(a) == check(b))
         return abs(a.x) < abs(b.x);
-    else if(disa == disb)
+    else if (disa == disb)
         return check(a) < check(b);
 
-    //åæ ‡ç³»ç»Ÿä¸­ç‚¹ä¸åŸç‚¹ä¹‹é—´çš„è·ç¦»ä»å°åˆ°å¤§æ’åº
+    //×ø±êÏµÍ³ÖĞµãÓëÔ­µãÖ®¼äµÄ¾àÀë´ÓĞ¡µ½´óÅÅĞò
     return disa < disb;
 }
-void SortPoints(Point *p, int n)
+void SortPoints(Point* p, int n)
 /* PreCondition:
 p points to an array with n coordinate points
 PostCondition:
 array is sorted satisfying to the specification
 */
 {
-    //TODO: your function definition
+    // TODO: your function definition
     sort(p, p + n, cmp);
-
 }
 
 int main() {
     Point a[N];
-    int n,i,t,cas;
-    scanf("%d",&cas);
-    for(t=0; t<cas; t++) {
-        scanf("%d",&n);
-        for (i=0; i<n; i++) scanf("%d%d",&a[i].x,&a[i].y);
+    int n, i, t, cas;
+    scanf("%d", &cas);
+    for (t = 0; t < cas; t++) {
+        scanf("%d", &n);
+        for (i = 0; i < n; i++)
+            scanf("%d%d", &a[i].x, &a[i].y);
         /***** function SortPoints is called here *****/
-        SortPoints(a,n);
+        SortPoints(a, n);
         /****************************************/
-        printf("case #%d:\n",t);
-        for (i=0; i<n; i++) printf("(%d,%d)%c",a[i].x,a[i].y,i<n-1?' ':'\n');
+        printf("case #%d:\n", t);
+        for (i = 0; i < n; i++)
+            printf("(%d,%d)%c", a[i].x, a[i].y, i < n - 1 ? ' ' : '\n');
     }
     return 0;
 }

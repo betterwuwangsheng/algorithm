@@ -7,7 +7,8 @@ using namespace std;
 
 内存限制: 256 MB
 
-正整数的逆串定于为从低位到高位，依次连接各数位上的数字所形成的字符串，如 321 的逆串为 123。
+正整数的逆串定于为从低位到高位，依次连接各数位上的数字所形成的字符串，如 321
+的逆串为 123。
 
 输入格式
 一个不多于 8 位的正整数 N
@@ -25,20 +26,18 @@ int a[9];
 int main() {
     int N, cnt = 0, sum;
     scanf("%d", &N);
-   // while(scanf("%d", &N) != EOF) {
 
-        cnt = 0;
-        sum = 0;
-        while(N) {
-            a[cnt] = N % 10;
-            N = N / 10;
-            cnt++;
-        }
-        printf("%d ", cnt);
+    cnt = 0;
+    sum = 0;
+    while (N) {
+        a[cnt] = N % 10;
+        N = N / 10;
+        cnt++;
+    }
+    printf("%d ", cnt);
 
-        for(int i = 0; i < cnt; i++) {
-            printf("%d", a[i]);
-        }
-    //}
+    for (int i = 0; i < cnt; i++) {
+        printf("%d", a[i]);
+    }
     return 0;
 }

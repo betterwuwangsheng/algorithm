@@ -1,49 +1,36 @@
-# include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 stack<int> st;
 int main() {
-
-    //èš‚èšæ•°é‡
+    //ÂìÒÏÊıÁ¿
     int N;
     cin >> N;
     int res = N;
-    while(N--) {
+    while (N--) {
         int s, dir;
         cin >> s >> dir;
 
-        //å‘å³ -> å…¥æ ˆ
-        if(dir == 1)
+        //ÏòÓÒ -> ÈëÕ»
+        if (dir == 1)
             st.push(s);
 
-        //å‘å·¦
-        else if(dir == 0) {
-
-            //æ ˆä¸ä¸ºç©º
-            while(!st.empty()) {
-
-                //å‘å·¦çš„èš‚èšæ›´å¤§
-                if(s > st.top()) {
-
-                    //æ•°é‡å‡å°‘
+        //Ïò×ó
+        else if (dir == 0) {
+            //Õ»²»Îª¿Õ
+            while (!st.empty()) {
+                //´óµÄÁôÏÂ
+                if (s > st.top()) {
                     res--;
-
-                    //å¤§çš„åƒæ‰å°çš„
                     st.pop();
                 } else {
-
-                    //å‘å·¦çš„èš‚èšå° -> æ•°é‡å‡å°‘
                     res--;
-
-                    //è·³å‡ºå¾ªç¯
                     break;
                 }
             }
-
         }
     }
-
     cout << res;
     return 0;
 }

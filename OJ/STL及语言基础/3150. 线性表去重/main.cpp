@@ -2,17 +2,16 @@
 
 using namespace std;
 
-//set 键唯一
-//set 集合默认升序
-set<int>S;
+// set 键唯一
+// set 集合默认升序
+set<int> S;
 int main() {
-
     //读入元素数量
     int n;
     cin >> n;
 
     //读入元素
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         int a;
         cin >> a;
 
@@ -22,7 +21,7 @@ int main() {
     }
 
     set<int>::iterator it;
-    for(it = S.begin(); it != S.end(); it++) {
+    for (it = S.begin(); it != S.end(); it++) {
         cout << *it << " ";
     }
 }

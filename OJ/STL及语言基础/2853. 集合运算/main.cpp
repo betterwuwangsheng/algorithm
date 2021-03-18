@@ -4,8 +4,7 @@
 using namespace std;
 
 ///打印函数
-void print(set<int> &s) {
-
+void print(set<int>& s) {
     cout << "{";
 
     ///空集合
@@ -13,8 +12,8 @@ void print(set<int> &s) {
         cout << "}" << endl;
     else {
         set<int>::iterator it = s.begin();
-        int i=0;
-        for (; i < s.size() - 1; ++it,++i)
+        int i = 0;
+        for (; i < s.size() - 1; ++it, ++i)
             cout << *it << ",";
         cout << *it << "}" << endl;
     }
@@ -27,13 +26,13 @@ int main() {
     set<int> B;
     set<int> C;
 
-    while(m--) {
+    while (m--) {
         int num;
         cin >> num;
         A.insert(num);
     }
 
-    while(n--) {
+    while (n--) {
         int num;
         cin >> num;
         B.insert(num);
@@ -42,7 +41,8 @@ int main() {
     set<int>::iterator it;
 
     ///求交集
-    set_intersection(A.begin(), A.end(), B.begin(), B.end(), inserter(C, C.end()));
+    set_intersection(A.begin(), A.end(), B.begin(), B.end(),
+                     inserter(C, C.end()));
     print(C);
     C.clear();
 
@@ -50,7 +50,8 @@ int main() {
     print(C);
     C.clear();
 
-    set_difference(A.begin(), A.end(), B.begin(), B.end(), inserter(C, C.end()));
+    set_difference(A.begin(), A.end(), B.begin(), B.end(),
+                   inserter(C, C.end()));
     print(C);
     return 0;
 }

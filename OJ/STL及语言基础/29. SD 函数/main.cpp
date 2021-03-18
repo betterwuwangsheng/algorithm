@@ -3,7 +3,7 @@
 using namespace std;
 
 //********** Specification of SD **********
-void SD(int a, int b, int *p) {
+void SD(int a, int b, int* p) {
     p[0] = a + b;
     p[1] = a - b;
 }

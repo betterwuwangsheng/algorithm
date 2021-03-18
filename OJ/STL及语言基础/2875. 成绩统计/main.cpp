@@ -4,10 +4,10 @@ using namespace std;
 
 int main() {
     int n;
-    while(scanf("%d", &n) != EOF) {
+    while (scanf("%d", &n) != EOF) {
         int sum = 0;
         map<long long, int> m;
-        while(n--) {
+        while (n--) {
             long long id;
             int score;
 
@@ -20,8 +20,8 @@ int main() {
 
         double s = 0;
         map<long long, int>::iterator it;
-        for(it = m.begin(); it != m.end(); it++) {
-            s += pow(avg - (it -> second), 2);
+        for (it = m.begin(); it != m.end(); it++) {
+            s += pow(avg - (it->second), 2);
         }
 
         //分母为[公式]的目的是为了让方差的估计是无偏的

@@ -3,14 +3,14 @@
 using namespace std;
 
 #define N 80
-int count(char s[],char t[])
-/* precondition: s å’Œ t æ˜¯ä¸¤ä¸ªå­—ç¬¦ä¸²ï¼Œt ä¸ä¼šæ˜¯ç©ºä¸²ï¼Œä¸” t ä¸ä¼šé‡å 
-   postcondition: è¿”å› t åœ¨ s ä¸­å‡ºç°çš„æ¬¡æ•°
+int count(char s[], char t[])
+/* precondition: s ºÍ t ÊÇÁ½¸ö×Ö·û´®£¬t ²»»áÊÇ¿Õ´®£¬ÇÒ t ²»»áÖØµş
+   postcondition: ·µ»Ø t ÔÚ s ÖĞ³öÏÖµÄ´ÎÊı
 */
 {
-    //TODO: your function definition
+    // TODO: your function definition
     int cnt = 0;
-    for (char *it = s; *it != '\0'; ++it)
+    for (char* it = s; *it != '\0'; ++it)
         if (*it == *t) {
             char *i = it, *j = t;
             while (*i != '\0' && *j != '\0' && *i == *j)
@@ -24,12 +24,11 @@ int count(char s[],char t[])
 }
 /***************************************************************/
 
-
 int main() {
-    char s[N+1],t[N+1];
-    scanf("%s%s",s,t);
-//********** count is called here ******************
-    printf("%d\n",count(s,t));
-//**************************************************
+    char s[N + 1], t[N + 1];
+    scanf("%s%s", s, t);
+    //********** count is called here ******************
+    printf("%d\n", count(s, t));
+    //**************************************************
     return 0;
 }

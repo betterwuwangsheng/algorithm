@@ -5,12 +5,11 @@ using namespace std;
 set<string> st;
 
 int main() {
-
     string s, temp;
     getline(cin, s);
 
     istringstream ss(s);
-    
+
     while (ss >> temp) {
         if (islower(temp[0]))
             temp[0] = temp[0] - 32;

@@ -3,13 +3,11 @@
 using namespace std;
 
 int main() {
-
     ///问题数
     int T;
     cin >> T;
 
-    for(int k = 0; k < T; k++) {
-
+    for (int k = 0; k < T; k++) {
         cout << "case #" << k << ":\n";
 
         ///操作数
@@ -19,15 +17,12 @@ int main() {
         ///优先队列输出小数据
         priority_queue<int, vector<int>, greater<int> > s;
 
-        for(int i = 0; i < n; i++) {
-
+        for (int i = 0; i < n; i++) {
             char action;
             cin >> action;
 
-
             ///操作为 B p
-            if(action == 'B') {
-
+            if (action == 'B') {
                 ///价格
                 int p;
                 cin >> p;
@@ -35,12 +30,11 @@ int main() {
                 ///入队
                 s.push(p);
             } else {
+                // while(!s.empty()) {
+                cout << s.top() << endl;
 
-                //while(!s.empty()) {
-                    cout << s.top() << endl;
-
-                    ///出队
-                    s.pop();
+                ///出队
+                s.pop();
                 //}
             }
         }

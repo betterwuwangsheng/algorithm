@@ -7,14 +7,14 @@ typedef struct {
 } Point;
 
 //********** Specification of NearPoints **********
-int NearPoints(Point *p, int n)
-/* PreCondition: p æŒ‡å‘ä¸€ä¸ªç‚¹çš„æ•°ç»„ï¼Œn æ˜¯èŒƒå›´ä¸º 2-100 çš„ç‚¹çš„ä¸ªæ•°
-    PostCondition: è¿”å›è·ç¦»åŸç‚¹å°äº 100 çš„ç‚¹çš„ä¸ªæ•°
+int NearPoints(Point* p, int n)
+/* PreCondition: p Ö¸ÏòÒ»¸öµãµÄÊı×é£¬n ÊÇ·¶Î§Îª 2-100 µÄµãµÄ¸öÊı
+    PostCondition: ·µ»Ø¾àÀëÔ­µãĞ¡ÓÚ 100 µÄµãµÄ¸öÊı
 */
 {
     int sum = 0;
     for (int i = 0; i < n; i++) {
-        if(abs(p[i].x) >= 100 || abs(p[i].y) >= 100 || abs(p[i].z) >= 100)
+        if (abs(p[i].x) >= 100 || abs(p[i].y) >= 100 || abs(p[i].z) >= 100)
             continue;
         else if (p[i].x * p[i].x + p[i].y * p[i].y + p[i].z * p[i].z < 10000)
             sum++;
@@ -27,7 +27,8 @@ int main() {
     int n, i;
     Point p[MAX];
     scanf("%d", &n);
-    for (i = 0; i < n; i++) scanf("%d%d%d", &p[i].x, &p[i].y, &p[i].z);
+    for (i = 0; i < n; i++)
+        scanf("%d%d%d", &p[i].x, &p[i].y, &p[i].z);
     printf("%d\n", NearPoints(p, n));
     return 0;
 }

@@ -2,25 +2,23 @@
 
 using namespace std;
 
-/***åˆ é™¤å­—ç¬¦ä¸²strä¸­åŒ…å«çš„å­ä¸²substrï¼Œä¸è¿›è¡Œé‡å¤åˆ é™¤*/
-char *Filter(char *str, char const *substr) {
-
+/***É¾³ı×Ö·û´®strÖĞ°üº¬µÄ×Ó´®substr£¬²»½øĞĞÖØ¸´É¾³ı*/
+char* Filter(char* str, char const* substr) {
     string s = str;
 
     int lenstr = strlen(str);
     int lensubstr = strlen(substr);
 
-    for(int i = 0; i < lenstr; ++i) {
-        if(s.substr(i, lensubstr) == substr) {
-            s.erase(i, i + lensubstr);
+    for (int i = 0; i < lenstr; ++i) {
+        if (s.substr(i, lensubstr) == substr) {
+            s.erase(i, lensubstr);
             i += lenstr - 1;
         }
     }
 
-    str = const_cast<char *>(s.c_str());
+    str = const_cast<char*>(s.c_str());
     return str;
 }
-
 
 int main() {
     char s[81], x[81];

@@ -1,6 +1,6 @@
-#include <iostream>
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
+#include <iostream>
 
 using namespace std;
 
@@ -19,7 +19,8 @@ Input
 
 
 Output
-对于每组输入数据，输出一行。如果输入数据不在0~100范围内，请输出一行：“Score is error!”。
+对于每组输入数据，输出一行。如果输入数据不在0~100范围内，请输出一行：“Score is
+error!”。
 
 
 Sample Input
@@ -28,18 +29,16 @@ Sample Input
 100
 123
 */
-int main()
-{
-
+int main() {
     int t;
-    while(scanf("%d", &t) != EOF){
-        if(t < 0 || t > 100){ //超出范围
+    while (scanf("%d", &t) != EOF) {
+        if (t < 0 || t > 100) {  //超出范围
             printf("Score is error!\n");
             continue;
         }
-        int level = t / 10 ;
+        int level = t / 10;
 
-        switch(level){
+        switch (level) {
             case 10:
             case 9:
                 printf("A\n");

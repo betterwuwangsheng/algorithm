@@ -1,6 +1,6 @@
+#include <cmath>
+#include <cstdio>
 #include <iostream>
-#include<cstdio>
-#include<cmath>
 
 using namespace std;
 
@@ -27,13 +27,12 @@ Sample Output
 123.00
 234.00
 */
-int main()
-{
-    double num,ans;
+int main() {
+    double num, ans;
 
-    while(scanf("%lf",&num) != EOF){
+    while (scanf("%lf", &num) != EOF) {
         ans = abs(num);
-        printf("%.2lf\n",ans);
+        printf("%.2lf\n", ans);
     }
     return 0;
 }

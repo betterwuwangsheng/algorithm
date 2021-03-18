@@ -2,53 +2,49 @@
 
 using namespace std;
 
-//å°†å¤§å†™è½¬æ¢ä¸ºå°å†™
-void lowerword(string &s) {
+//½«´óĞ´×ª»»ÎªĞ¡Ğ´
+void lowerword(string& s) {
     for (int i = 0; i < (int)s.size(); i++) {
         s[i] = tolower(s[i]);
     }
 }
 
-//æ¯”è¾ƒå­—ç¬¦ä¸²å¤§å°
+//±È½Ï×Ö·û´®´óĞ¡
 bool cmp(string s1, string s2) {
-
-    //åœ¨æ’åºæ—¶å¦‚æœè¯¥å­—ç¬¦ä¸²ä¸­åŒ…å«å¤§å†™å­—æ¯ï¼Œåˆ™å½“ä½œå°å†™å­—æ¯å¤„ç†
+    //ÔÚÅÅĞòÊ±Èç¹û¸Ã×Ö·û´®ÖĞ°üº¬´óĞ´×ÖÄ¸£¬Ôòµ±×÷Ğ¡Ğ´×ÖÄ¸´¦Àí
     lowerword(s1);
     lowerword(s2);
     return s1 < s2;
 }
 int main() {
-
-    //é—®é¢˜æ•°
+    //ÎÊÌâÊı
     int T;
-   scanf("%d", &T);
+    scanf("%d", &T);
 
-    //ä¿å­˜æ–‡çŒ®è®°å½•
+    //±£´æÎÄÏ×¼ÇÂ¼
     vector<string> vt;
 
-    for(int i = 0; i < T; i++) {
-
-        //æ–‡çŒ®è®°å½•æ•°
+    for (int i = 0; i < T; i++) {
+        //ÎÄÏ×¼ÇÂ¼Êı
         int n;
         scanf("%d", &n);
 
-        //åœ¨ getline å‰é¢åŠ å…¥ getchar() å¸æ”¶ä¹‹å‰é”®ç›˜è¾“å…¥çš„å›è½¦é”®
+        //ÔÚ getline Ç°Ãæ¼ÓÈë getchar() ÎüÊÕÖ®Ç°¼üÅÌÊäÈëµÄ»Ø³µ¼ü
         getchar();
-
-        //è¯»å…¥
-        while(n--) {
+        //¶ÁÈë
+        while (n--) {
             string s;
             getline(cin, s);
 
-            //åŠ å…¥å­—ç¬¦ä¸²åŠ¨æ€æ•°ç»„
+            //¼ÓÈë×Ö·û´®¶¯Ì¬Êı×é
             vt.push_back(s);
         }
 
-        //æ’åº
+        //ÅÅĞò
         sort(vt.begin(), vt.end(), cmp);
 
         cout << "case #" << i << ":" << endl;
-        for(auto v : vt)
+        for (auto v : vt)
             cout << v << endl;
         vt.clear();
     }

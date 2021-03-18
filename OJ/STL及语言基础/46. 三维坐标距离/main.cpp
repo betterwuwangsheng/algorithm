@@ -8,9 +8,9 @@ typedef struct {
 
 double Distance(Point a, Point b)
 /* PreCondition:
-     a,b 鐐圭殑姣忕淮鍧愭爣鍊艰寖鍥翠负 -100 ~ +100
+     a,b 点的每维坐标值范围为 -100 ~ +100
    PostCondition:
-     杩斿洖 a,b 鐐逛箣闂寸殑璺濈
+     返回 a,b 点之间的距离
 */
 {
     double x = abs(a.x - b.x) * abs(a.x - b.x);
