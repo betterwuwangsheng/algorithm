@@ -10,7 +10,9 @@
     "unordered_set": "cpp",
     "vector": "cpp",
     "valarray": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "ratio": "cpp",
+    "cmath": "cpp"
   },
   "C_Cpp.clang_format_style": "{ BasedOnStyle: Chromium, IndentWidth: 4}",
 }
