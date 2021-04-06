@@ -8,14 +8,14 @@ int main() {
 
     int cnt = 0;
     for (int i = 1; i <= n; ++i) {
-        while (i) {
-            int t = i % 10;
-            if (i == 1)
+        int num = i;  //赋值给 num，不然会导致死循环
+        while (num) {
+            int t = num % 10;
+            if (t == x)
                 cnt++;
-            t /= 10;
+            num /= 10;
         }
     }
     printf("%d\n", cnt);
-    system("pause");
     return 0;
 }

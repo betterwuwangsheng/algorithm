@@ -4,13 +4,15 @@ typedef long long ll;
 
 using namespace std;
 
-int main() {
+int main()
+{
     int t;
     cin >> t;
 
     ll a, b;
 
-    while (t--) {
+    while (t--)
+    {
         cin >> a >> b;
         if (__gcd(a, b) > 1)
             cout << "Sim" << endl;
