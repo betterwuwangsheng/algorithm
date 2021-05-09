@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1610167934 source:d:\software\codeblocks\workspace\sort\main.cpp
-	<iostream>
-	<cstdio>
-	<algorithm>
-	<cmath>
-	<cstring>
-

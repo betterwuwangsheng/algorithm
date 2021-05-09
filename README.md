@@ -1,4 +1,0 @@
-# algorithm
-EOJ
-HDU
-codeforces

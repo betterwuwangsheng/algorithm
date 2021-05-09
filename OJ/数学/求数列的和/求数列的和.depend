@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1610100364 source:d:\software\codeblocks\workspace\求数列的和\main.cpp
-	<iostream>
-	<cstdio>
-	<cmath>
-

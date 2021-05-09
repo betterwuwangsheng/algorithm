@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1610093027 source:d:\software\codeblocks\workspace\计算两点间的距离\main.cpp
-	<iostream>
-	<cstdio>
-	<cmath>
-

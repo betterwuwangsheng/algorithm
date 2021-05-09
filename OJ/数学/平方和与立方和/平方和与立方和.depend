@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1610097273 source:d:\software\codeblocks\workspace\平方和与立方和\main.cpp
-	<iostream>
-	<cstdio>
-	<cmath>
-
