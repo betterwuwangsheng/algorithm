@@ -2,33 +2,19 @@
 
 using namespace std;
 
-const int MAXN = 110;
-int dp[MAXN];//å¿ƒèµ°æ–¹æ³•æ€»æ•°
-bool broke[MAXN];//æ ‡è®°æŸåçš„æ¥¼æ¢¯
+int main()
+{
+    int n, k, num;
 
-int main() {
-    memset(broke, false, sizeof(broke));
-    int n, m;
-    cin >> n >> m;
-    for(int i = 0; i < m; i++) {
-        int num;
-        cin >> num;
-        broke[num] = true; //æ ‡è®°åæ¥¼æ¢¯
+    ///Â¥ÌİÒ»¹²ÓĞ n ²ã
+    ///k -> num Êı¾İµÄÊıÁ¿
+    scanf("%d%d", &n, &k);
+
+    ///¸¯ÈéËğ»µµÄÌ¨½×ºÅ
+    ///£¨´ÓÂ¥Ìİµ×²¿µ½Â¥Ìİ¶¥²¿£¬Ì¨½×ĞòºÅÒÀ´ÎÎª 1 µ½ n£©¡£
+    ///Ò»´ÎÄÜÉÏÒ»½×¡¢Á½½×»òÈı½×Ì¨½×
+    while(k--){
+        scanf("%d", &num);
     }
-    dp[0] = 1;
-    for(int i = 1; i <= n; i++) {
-        if(broke[i]) //
-            dp[i] = 0;
-        else {
-            if(i >= 3)
-                dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
-            else if(i >= 2) {
-                dp[i] = dp[i - 1] + dp[i - 2];
-            } else {
-                dp[i] = dp[i - 1];
-            }
-        }
-    }
-    cout << dp[n] <<endl;
     return 0;
 }

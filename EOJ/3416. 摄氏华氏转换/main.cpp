@@ -3,20 +3,12 @@
 using namespace std;
 
 int main() {
-    string s;
-    cin >> s;
-
-    int len = s.size();
-
-    if (s[len - 1] == 'f') {
-        s[len - 1] = '\0';
-
-        double num = stoi(s);
-        printf("%.2fc\n", (num - 32) * 5 / 9);
-    } else {
-        s[len - 1] = '\0';
-        double num = stoi(s);
-        printf("%.2ff\n", (num * 9 / 5) + 32);
-    }
-    return 0;
+    string a;
+    cin >> a;
+    char x = 'f';
+    if (a.back() == 'f')
+        x = 'c';
+    a.pop_back();
+    double num = stoi(a);
+    cout << fixed << setprecision(2) << (x == 'f' ? (num * 9 / 5) + 32 : (num - 32) * 5 / 9) << x;
 }
