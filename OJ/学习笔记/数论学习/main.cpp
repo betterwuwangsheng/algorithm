@@ -5,7 +5,7 @@ typedef long long LL;
 
 const int MAXN =  1e5;
 
-//素数筛 -> 默认素数
+//素数�? -> 默认素数
 int isPrime[MAXN];
 
 //a * b = __gcd(a,b) * lcm(a,b)
@@ -20,13 +20,13 @@ void check(int n) {
         isPrime[i] = 1;
     for(int i = 2; i * i<= n; ++i) {
 
-        //是素数
+        //是素�?
         if(isPrime[i])
 
             //i* i 可能溢出
             for(int j = 2 * i; j <= n; j += i) //去掉倍数
 
-                //标记为不是素数
+                //标记为不是素�?
                 isPrime[j] = 0;
     }
 }
@@ -36,10 +36,10 @@ void check(int n) {
 LL qpow(LL a, LL b, LL MOD) {
     LL ans = 1;
     while(b) {
-        if(b & 1) //末尾为 1
+        if(b & 1) //末尾�? 1
             ans = (ans * a) % MOD; //得积
         a = (a * a) % MOD; //自乘
-        b >>= 1; // 右移一位
+        b >>= 1; // 右移一�?
     }
     return ans;
 }
