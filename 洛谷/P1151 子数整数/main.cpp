@@ -3,7 +3,8 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
+    int k;
+    scanf("%d", &k);
+
     return 0;
 }
