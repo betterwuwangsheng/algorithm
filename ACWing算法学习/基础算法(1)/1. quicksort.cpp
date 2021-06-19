@@ -12,7 +12,7 @@ void quick_sort(int a[], int l, int r) {
     if (l >= r)
         return;
 
-    //分界点(中间位置元素)
+    //分界点,枢轴元素(中间位置元素)
     int pivot = a[l + r >> 1];
 
     //两侧指针(数组两边界之外, i j 同时往中间移动)

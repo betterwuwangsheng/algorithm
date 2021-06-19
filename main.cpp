@@ -1,46 +1,34 @@
+// int a[] å¾…æŽ’åºæ•°ç»„
+// int left æ•°ç»„å·¦è¾¹ç•Œ
+// int right æ•°ç»„å³è¾¹ç•Œ
+//å¿«é€ŸæŽ’åº
+void quick_sort(int a[], int left, int right) {
+    //æ•°ç»„ä¸ºç©ºæˆ–è€…åªæœ‰ä¸€ä¸ªæ•°
+    if (left >= right)
+        return;
 
-//½»»»º¯Êý
-void swap(int& a, int& b) {
-    int tmp = a;
-    a = b;
-    b = tmp;
-}
+    //åˆ†ç•Œç‚¹,æž¢è½´å…ƒç´ (ä¸­é—´ä½ç½®å…ƒç´ )
+    int pivot = a[left + right >> 1];
 
-/**
- * ¿ìËÙÅÅÐòËã·¨
- * int a[]:´ýÅÅÐòÊý×é
- * int l: Êý×é×ó±ß½ç
- * int r: Êý×éÓÒ±ß½ç
- */
-void quick_sort(int a[], int l, int r) {
-    //Êý×éÖÐÃ»ÓÐÔªËØ»òÕßÖ»ÓÐÒ»¸öÔªËØ
-    if (l >= r)
-        return;  //²»½øÐÐ²Ù×÷
+    //ä¸¤ä¾§æŒ‡é’ˆ(æ•°ç»„ä¸¤è¾¹ç•Œä¹‹å¤–, i j åŒæ—¶å¾€ä¸­é—´ç§»åŠ¨)
+    int i = left - 1, j = right + 1;
 
-    //Ñ¡È¡ÊàÖáÔªËØ
-    int pivot = a[l + r >> 1];  //´Ë´¦Ñ¡È¡ÖÐ¼äÎ»ÖÃÔªËØ
-
-    int i = l - 1, j = r + 1;  // i,j ·Ö±ðÖ¸ÏòÊý×é×ó±ß½çÇ°Ò»Î»ÖÃ£¬ÓÒ±ß½çºóÒ»Î»ÖÃ
-
-    //µ± i < j Ê±,²»¶ÏÑ­»·
+    //ä¸æ–­å¾ªçŽ¯
     while (i < j) {
+        //å·¦å³æŒ‡é’ˆå‘ä¸­é—´ç§»åŠ¨
         do {
             i++;
-            // i ²»¶ÏÒÆ¶¯,Ö±µ½ËùÖ¸ÔªËØ´óÓÚÊàÖáÔªËØ(Ö»Òª
-            // i ËùÖ¸Î»ÖÃÔªËØÐ¡ÓÚÊàÖáÔªËØ,¾ÍËµÃ÷¸ÃÔªËØËù´¦Çø¼äÕýÈ·)
-        } while (a[i] < pivot);
-
+        } while (a[i] < pivot);  //é‡åˆ°ç¬¬ä¸€ä¸ªå¤§äºŽ pivotçš„å€¼
         do {
             j--;
-            // j ²»¶ÏÒÆ¶¯,Ö±µ½ËùÖ¸ÔªËØÐ¡ÓÚÊàÖáÔªËØ
-        } while (a[j] > pivot);
+        } while (a[j] > pivot);  //é‡åˆ°ç¬¬ä¸€ä¸ªå°äºŽ pivotçš„å€¼
 
-        //Ã»ÓÐÏàÓö
+        //æ²¡æœ‰ç›¸é‡
         if (i < j)
-            swap(a[i], a[j]);  //½»»»i,jËùÖ¸ÔªËØ
+            //äº¤æ¢a[i], a[j]
+            swap(a[i], a[j]);  // swap å‡½æ•°åœ¨å†’æ³¡æŽ’åºå‡½æ•°ä¸­å·²å‡ºçŽ°è¿‡
     }
-
-    //µÝ¹é
-    quick_sort(a, l, j);
-    quick_sort(a, j + 1, r);
+    //é€’å½’å¤„ç†å·¦å³ä¸¤ç«¯
+    quick_sort(a, left, j);
+    quick_sort(a, j + 1, right);
 }
