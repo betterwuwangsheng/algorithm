@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-double cost[10005];  //代表第i度电的花费
+double cost[10005];  
 int a;
 double b;
 int main() {
