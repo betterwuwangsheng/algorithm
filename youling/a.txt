@@ -1,0 +1,9 @@
+  <!--注册处理器映射器-->
+  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+  <!--注册处理器适配器-->
+  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+  <!--注册视图解析器-->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/"/>
+    <property name="suffix" value=".jsp"/>
+  </bean>

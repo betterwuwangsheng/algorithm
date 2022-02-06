@@ -3,8 +3,9 @@
 using namespace std;
 
 int main() {
-    string s;
-    cin >> s;
-
+    char x, y, z;
+    int a, b, c;
+    scanf("%c:=%d;%c:=%d;%c:=%d;", &x, &a, &y, &b, &z, &c);
+    printf("%d %d %d", &a, &b, &c);
     return 0;
 }
