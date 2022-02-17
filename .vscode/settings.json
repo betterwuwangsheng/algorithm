@@ -71,6 +71,7 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "thread": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "queue": "cpp"
     }
 }
